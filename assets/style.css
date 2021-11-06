@@ -22,6 +22,18 @@ body {
     max-height: fit-content;
 }
 
+.red-outline {
+    border: 2px dashed red;
+}
+
+.green-outline {
+    border: 2px dashed green;
+}
+
+.blue-outline {
+    border: 2px dashed blue;
+}
+
 
 .content-wrap {
     padding-bottom: 30px;
