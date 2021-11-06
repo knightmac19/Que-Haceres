@@ -1,6 +1,8 @@
 $(document).ready(() => {
     var pageDate = $('#page-date');
     var pageTime = $('#page-time');
+    var saveModal = $('.save-modal');
+    var listHeader =$('.list-header');
     
     const setDateTime = () => {
         let rightNow = new Date();
@@ -20,12 +22,21 @@ $(document).ready(() => {
         
     }
 
-    setDateTime();
-    setInterval(setDateTime, 1000);
+    saveModal.on('click', function() {
+        let input = $(this).parent().prev().children('#new-item').val();
+        // console.log(input)
+
+
+
+    });
+
+    
 
     $('.clear-btn').on('click', function() {
 
     });
 
+    setDateTime();
+    setInterval(setDateTime, 1000);
 });
 
