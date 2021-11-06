@@ -4,7 +4,8 @@ $(document).ready(() => {
     var saveModal = $('.save-modal');
     var listHeader =$('.list-header');
 
-    var todoArr = localStorage.getItem('todoArr') || [];
+    var todoArr = JSON.parse(localStorage.getItem('todoArr')) || [];
+    console.log(todoArr)
     console.log(todoArr.length)
     
     const setAndUpdate = async (str) => {
@@ -36,18 +37,26 @@ $(document).ready(() => {
     }
 
     const createItems = (arr) => {
+        console.log(arr);
+        // listHeader.children().remove();
         for (var i = 0; i < arr.length; i++) {
-            let newEl = $(`<li class="list-group-item last-to-do"><input type="checkbox" > ${arr[i]}</li>`);
-            newEl.insertAfter(listHeader);
+            let newEl = $(`<li class="list-group-item"><input type="checkbox" > ${arr[i]}</li>`);
+            // console.log(newEl)
+            listHeader.append(newEl)
         }
+        console.log(arr)
+        // console.log(todoArr)
+        // console.log(JSON.parse(localStorage.getItem('todoArr')))
         return;
+        
     }
 
     saveModal.on('click', async function() {
+        listHeader.children().remove();
         let input = $(this).parent().prev().children('#new-item').val();
         await setAndUpdate(input);
         
-        createItems(todoArr);
+        await createItems(todoArr);
 
     });
 
@@ -59,6 +68,6 @@ $(document).ready(() => {
 
     setDateTime();
     setInterval(setDateTime, 1000);
+    createItems(todoArr);
     
 });
-
