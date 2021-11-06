@@ -11,6 +11,11 @@ body {
     color:#155fbf;
 }
 
+.new-btn {
+    color: white;
+    background-color: #155fbf;
+}
+
 .hour-block {
     display: flex;
     flex-direction: row;
