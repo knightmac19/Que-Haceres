@@ -17,6 +17,10 @@ body {
     align-items: center;
 }
 
+.que-haceres {
+    min-height: 250px;
+    max-height: fit-content;
+}
 
 
 .content-wrap {
@@ -44,7 +48,7 @@ body {
 } 
 
 .future {
-    background-color: #ba8fe5;
+    background-color: #6698da;
     
 }
 
