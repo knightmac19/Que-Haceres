@@ -18,6 +18,7 @@
     <title>Que Haceres</title>
 </head>
 <body>
+    
     <div id="page-container">
         <main class="content-wrap">
             <div class="jumbotron jumbo-day jumbotron-fluid mb-3">
@@ -32,6 +33,28 @@
                 </div>
             </div>
 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add ToDo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body align-items-center">
+            <input class="modal-input" id="new-item" type="text">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn save-modal btn-primary">Save ToDo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
             <div class="container mb-5">
                 <div id="8" class="row hour-block mb-2 justify-content-center">
                     <div class="col-lg-9 col-md-9 col-sm-12 col-12 que-haceres">
@@ -40,7 +63,7 @@
                                 <li class="list-group-item bg-secondary list-header text-light"><input type="checkbox" disabled="disabled" checked> Add ToDo's Here...</li>
                                 <li class="list-group-item last-to-do"><input type="checkbox" > </li>
                             </div>
-                            <button type="button" class="btn new-btn mt-2"><strong>NEW</strong> <i class="fa fa-plus" aria-hidden="true"></i></button>
+                            <button type="button" class="btn new-btn mt-2" data-toggle="modal" data-target="#exampleModal"><strong>NEW</strong> <i class="fa fa-plus" aria-hidden="true"></i></button>
                         </ul>
                         
 

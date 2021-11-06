@@ -11,6 +11,12 @@ body {
     color:#155fbf;
 }
 
+.modal-input {
+    display: block;
+    margin : 0 auto;
+    min-width: 300px;
+}
+
 .new-btn {
     color: white;
     background-color: #155fbf;
