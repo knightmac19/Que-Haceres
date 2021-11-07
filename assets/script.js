@@ -45,6 +45,10 @@ $(document).ready(() => {
         
     }
 
+    newBtn.on('click', function() {
+        $('#new-item').val('');
+    });
+
     $('#exampleModal').on('shown.bs.modal', function() {
         $('#new-item').focus();
     });
