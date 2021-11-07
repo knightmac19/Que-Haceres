@@ -53,6 +53,13 @@ $(document).ready(() => {
         $('#new-item').focus();
     });
 
+    $('#new-item').on('keyup', function(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            saveModal.click();
+        }
+    });
+
 
 
     saveModal.on('click', async function() {
