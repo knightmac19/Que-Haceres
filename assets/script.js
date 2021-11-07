@@ -3,10 +3,10 @@ $(document).ready(() => {
     var pageTime = $('#page-time');
     var saveModal = $('.save-modal');
     var listHeader =$('.list-header');
+    var newBtn = $('.new-btn');
 
     var todoArr = JSON.parse(localStorage.getItem('todoArr')) || [];
-    console.log(todoArr)
-    console.log(todoArr.length)
+    
     
     const setAndUpdate = async (str) => {
         todoArr.push(str)
@@ -14,9 +14,6 @@ $(document).ready(() => {
         todoArr = JSON.parse(localStorage.getItem('todoArr'));
     }
 
-    // const updateTodoArr = () => {
-    //     todoArr = JSON.parse(localStorage.getItem('todoArr'));
-    // }
 
     const setDateTime = () => {
         let rightNow = new Date();
@@ -37,19 +34,22 @@ $(document).ready(() => {
     }
 
     const createItems = (arr) => {
-        console.log(arr);
-        // listHeader.children().remove();
+        
         for (var i = 0; i < arr.length; i++) {
             let newEl = $(`<li class="list-group-item"><input type="checkbox" > ${arr[i]}</li>`);
-            // console.log(newEl)
+        
             listHeader.append(newEl)
         }
-        console.log(arr)
-        // console.log(todoArr)
-        // console.log(JSON.parse(localStorage.getItem('todoArr')))
+        
         return;
         
     }
+
+    $('#exampleModal').on('shown.bs.modal', function() {
+        $('#new-item').focus();
+    });
+
+
 
     saveModal.on('click', async function() {
         listHeader.children().remove();
