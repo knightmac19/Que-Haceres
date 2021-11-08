@@ -4,9 +4,10 @@ $(document).ready(() => {
     var saveModal = $('.save-modal');
     var listHeader =$('.list-header');
     var newBtn = $('.new-btn');
+    var chkBx = $('.my-checkbox')
 
     var todoArr = JSON.parse(localStorage.getItem('todoArr')) || [];
-    
+    // console.log(localStorage.getItem('todoArr'))
     
     const setAndUpdate = async (str) => {
         todoArr.push(str)
@@ -36,7 +37,7 @@ $(document).ready(() => {
     const createItems = (arr) => {
         
         for (var i = 0; i < arr.length; i++) {
-            let newEl = $(`<li class="list-group-item"><input type="checkbox" > ${arr[i]}</li>`);
+            let newEl = $(`<li class="list-group-item"><input class="my-checkbox" type="checkbox" > ${arr[i]}</li>`);
         
             listHeader.append(newEl)
         }
@@ -75,9 +76,18 @@ $(document).ready(() => {
 
     $('.clear-btn').on('click', function() {
         todoArr = [];
-        localStorage.setItem('todoArr', []);
+        localStorage.removeItem('todoArr');
         listHeader.children().remove();
     });
+
+    $(document).on('click', function(e) {
+        if ($(e.target).hasClass('my-checkbox')) {
+
+            $(e.target).parent().css('text-decoration', 'line-through');
+        }
+        return;
+        
+    })
 
     setDateTime();
     setInterval(setDateTime, 1000);
