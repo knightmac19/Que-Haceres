@@ -11,6 +11,10 @@ body {
     color:#155fbf;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
 .modal-input {
     display: block;
     margin : 0 auto;

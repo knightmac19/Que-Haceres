@@ -37,7 +37,7 @@ $(document).ready(() => {
     const createItems = (arr) => {
         
         for (var i = 0; i < arr.length; i++) {
-            let newEl = $(`<li class="list-group-item pb-4"><input class="my-checkbox" type="checkbox" > ${arr[i]} <button type="button" class="btn btn-danger clear-this-btn float-right"><i class="fa fa-trash" aria-hidden="true"></i></button></li>`);
+            let newEl = $(`<li class="list-group-item pb-4"><input class="my-checkbox" type="checkbox" > ${arr[i]} <button type="button" class="btn btn-danger clear-this-btn invisible float-right"><i class="fa fa-trash" aria-hidden="true"></i></button></li>`);
         
             listHeader.append(newEl)
         }
@@ -84,6 +84,7 @@ $(document).ready(() => {
         if ($(e.target).hasClass('my-checkbox')) {
 
             $(e.target).parent().css('text-decoration', 'line-through');
+            $(e.target).siblings('.clear-this-btn').removeClass('invisible');
         }
         return;
         
