@@ -90,8 +90,16 @@ $(document).ready(() => {
     $(document).on('click', async function(e) {
         if ($(e.target).hasClass('my-checkbox')) {
 
-            $(e.target).parent().css('text-decoration', 'line-through');
-            $(e.target).siblings('.clear-this-btn').removeClass('invisible');
+            if ($(e.target).is(':checked')) {
+
+                $(e.target).parent().css('text-decoration', 'line-through');
+                $(e.target).siblings('.clear-this-btn').removeClass('invisible');
+            } else {
+                
+                $(e.target).parent().css('text-decoration', '');
+                $(e.target).siblings('.clear-this-btn').addClass('invisible');
+            }
+            
         }
 
         if ($(e.target).hasClass('clear-this-btn')) {
