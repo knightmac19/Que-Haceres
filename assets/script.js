@@ -74,7 +74,9 @@ $(document).ready(() => {
     
 
     $('.clear-btn').on('click', function() {
-
+        todoArr = [];
+        localStorage.setItem('todoArr', []);
+        listHeader.children().remove();
     });
 
     setDateTime();
