@@ -34,7 +34,7 @@ $(document).ready(() => {
     const createItems = (arr) => {
         
         for (var i = 0; i < arr.length; i++) {
-            let newEl = $(`<li class="list-group-item pb-4"><input class="my-checkbox" type="checkbox" > ${arr[i]} <button type="button" class="btn btn-danger clear-this-btn invisible float-right"><i class="fa clear-this-icon fa-trash" aria-hidden="true"></i></button></li>`);
+            let newEl = $(`<li class="list-group-item pb-4"><input class="my-checkbox" type="checkbox" > ${arr[i]} <button type="button" class="btn btn-danger clear-this-btn invisible float-right"><i class="fas clear-this-icon fa-trash" aria-hidden="true"></i></button></li>`);
         
             listHeader.append(newEl)
         }
